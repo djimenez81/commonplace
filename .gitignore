@@ -1,3 +1,5 @@
 __pycache__/
 .~lock.*
 .venv
+**/__pycache__/
+my_notes_grouped/
