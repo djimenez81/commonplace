@@ -33,6 +33,9 @@ class BasicNote:
 
 class NoteCollection:
     # This class contains the structure and logic for collections of notes.
+    col_type: str # This is the type of the collection.
+    col_type: str # The name or title of the collection.
+    notes: list[BasicNote]
     pass
 
 class NoteModule:
