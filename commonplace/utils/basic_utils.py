@@ -24,3 +24,9 @@ def _generate_id(prefix: str) -> str:
     for _ in range(ID_LEN):
         id_string += ALPHABET[randint(0,ALP_LEN-1)]
     return id_string
+
+def _generate_code() -> str:
+    id_code = ''
+    for _ in range(ID_LEN):
+        id_code += ALPHABET[randint(0,ALP_LEN-1)]
+    return id_code
