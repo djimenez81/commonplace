@@ -34,9 +34,32 @@ class BasicNote:
 class NoteCollection:
     # This class contains the structure and logic for collections of notes.
     col_type: str # This is the type of the collection.
-    col_type: str # The name or title of the collection.
+    col_name: str # The name or title of the collection.
     notes: list[BasicNote]
-    pass
+
+    def __init__(self, this_col_type: str, this_col_name: str):
+        self.col_type = this_col_type
+        self.col_name = this_col_name
+        self.notes = []
+
+    def create_note(self, note: BasicNote):
+        pass
+
+    def update_note(self, note: BasicNote):
+        pass
+
+    def get_note(self, note_id: str):
+        # Get a specific note on this module by its id.
+        pass
+
+    def delete_note(self, note_id: str):
+        pass
+
+    def search(self, query: str):
+        # Searches all the notes in this module.
+        pass
+
+
 
 class NoteModule:
     # This class contains the structure and logic for note modules. A note
