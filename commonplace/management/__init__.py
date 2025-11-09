@@ -1,5 +1,6 @@
 # Initialization script for: management submodule
 
+# modules
 from .parser import Parser NoteDatabase
 
 # Metadata

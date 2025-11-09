@@ -1,5 +1,6 @@
 # Initialization script for: core subpackage
 
+# modules
 from .core import BasicNote, NoteCollection, NoteModule
 
 # Metadata
