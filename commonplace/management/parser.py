@@ -5,6 +5,13 @@
 # or note collections.
 
 
+# Own imports
+from ..core.core import BasicNote, NoteCollection, NoteModule
+
+# Standard imports
+from dataclasses import dataclass
+
+
 # @dataclass
 class Parser:
     # This class contains the logic to read from drive or save to it a

@@ -4,7 +4,10 @@
 # This module contains the basic logic for the management of notes and modules
 # or note collections.
 
+
+# Standard imports
 from typing import Any
+from dataclasses import dataclass
 
 @dataclass
 class BasicNote:
@@ -27,7 +30,7 @@ class BasicNote:
             self.properties = {}
         if self.links is None:
             self.links = []
-        if aliases is None:
+        if self.aliases is None:
             self.aliases = []
 
 
