@@ -19,7 +19,7 @@ For now, remember to run
 # The first time to initialize the virtual environment
 python3 -m venv .venv
 source .venv/bin/activate
-pip3 install pyside6 pandas numpy scipy markdown pyyaml
+pip3 install pyside6 pandas numpy scipy markdown pyyaml dataclasses
 
 # When starting to work remember
 source .venv/bin/activate
