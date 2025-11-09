@@ -2,9 +2,9 @@
 
 
 # Imports
-from .management.parser import Parser, NoteDatabase
-from .core.core         import BasicNote, NoteCollection, NoteModule
-from .utils.basic_utils import _generate_code
+from .management import Parser, NoteDatabase
+from .core       import BasicNote, NoteCollection, NoteModule
+from .utils      import _generate_code
 
 
 # Metadata
