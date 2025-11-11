@@ -51,6 +51,11 @@ class NoteCollection:
         else:
             self.update_note(note)
 
+    def _is_note_in_collection(self, note: BasicNote):
+        flag = False
+        # TODO: Check if the note is already in the collection.
+        return flag
+
     def update_note(self, note: BasicNote):
         pass
 
