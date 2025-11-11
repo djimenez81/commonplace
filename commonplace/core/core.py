@@ -46,7 +46,10 @@ class NoteCollection:
         self.notes = []
 
     def create_note(self, note: BasicNote):
-        pass
+        if not self._is_note_in_collection(note):
+            self.notes.append(note)
+        else:
+            self.update_note(note)
 
     def update_note(self, note: BasicNote):
         pass
