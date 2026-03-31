@@ -19,6 +19,8 @@ really been thought out deeply.
 - [My motivation to start this project](docs/HISTORY.md): This is pretty much
 personal stuff that motivated me to do this, in case it is interesting for
 anyone.
+- [Philosophy of implementation](docs/PHILOSOPHY.md): This document defines the
+principles to guide the way the project is implemented.
 
 ## Technologies used
 
@@ -27,4 +29,4 @@ and it will make use of **YAML**, **MarkDown** and other languages.
 
 ## Installation
 
-There is nothing to install yet, thus, come back later. 
+There is nothing to install yet, thus, come back later.
