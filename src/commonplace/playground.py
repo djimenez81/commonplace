@@ -17,7 +17,3 @@ def returnYAML(file_path):
         for doc in data:
             documents.append(doc)
     return documents
-
-
-path = '../../config/definitions.yaml'
-path2 = '/home/'
