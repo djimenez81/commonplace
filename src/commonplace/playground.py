@@ -9,11 +9,3 @@ Don't be surprised if this file disappear later on.
 """
 
 import yaml
-
-def returnYAML(file_path):
-    documents = list()
-    with open(file_path, 'r') as file:
-        data = yaml.safe_load_all(file)
-        for doc in data:
-            documents.append(doc)
-    return documents
