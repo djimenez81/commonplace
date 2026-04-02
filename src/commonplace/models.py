@@ -100,7 +100,7 @@ class CollectionTypeDefinition:
     note_types_allowed: list[str | dict] | None = None
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, kw_only=True)
 class FieldType:
     """A field type in the system.
 
@@ -110,7 +110,7 @@ class FieldType:
     pass
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, kw_only=True)
 class NoteType:
     """A note type in the system.
 
@@ -120,7 +120,7 @@ class NoteType:
     pass
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, kw_only=True)
 class CollectionType:
     """A collection type in the system.
 
