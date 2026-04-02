@@ -377,7 +377,7 @@ will explore:
       optional attribute. Its type is `boolean` and its default is `false`.
 		- `unique`: Specifies if the sub-collection is unique or several of them can
       be created. Its type is `boolean` and its default is `false`.
-	- `notes_types_allowed`: This specifies the types of notes that can be
+	- `note_types_allowed`: This specifies the types of notes that can be
     included inside a collection. It can be either `word` (the name of the note
     type) or an `inclusion_attributes` object (as previously specified).
 	- `extends`: As with notes, a collection may extend one single collection.
@@ -453,7 +453,7 @@ Based on the previous discussion, the following is the definition of the
 obligatory fields.
 
 ```yaml
-# These are the fields that are inheritted either by every note.
+# These are the fields that are inherited either by every note.
 ---
 new_field_type:
   field_name: uuid
