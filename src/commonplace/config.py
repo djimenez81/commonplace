@@ -82,7 +82,7 @@ class TypeConfigurationManager:
         except KeyError as exc:
             raise KeyError(f"Missing required key: {exc.args[0]}") from exc
 
-        # Optional fields with defaults
+        # Optional fields.
         required = definition.get(constants.REQUIRED)
         assigned = definition.get(constants.ASSIGNED)
         overwrite = definition.get(constants.OVERWRITE)
@@ -108,8 +108,38 @@ class TypeConfigurationManager:
 
     def add_note_def(self, definition: dict) -> None:
         """Validates and adds a note definition to the list.
+
+        Args:
+            definition: Dictionary containing field definition data.
+
+        Raises:
+            KeyError: If required keys are missing.
         """
-        pass
+        try:
+            note_type = definition.get(constants.NOTE_TYPE)
+        except KeyError as exc:
+            raise KeyError(f"Missing required key: {exc.args[0]}") from exc
+
+        # Optional fields
+        extends = definition.get(constants.EXTENDS)
+        metadata_fields = definition.get(constants.META_FIELDS)
+        additional_metadata = definition.get(constants.META_FIELDS)
+        body_specification = definition.get(constants.BODY_SPEC)
+
+        # Ensure container exists
+        if note_type not in self.note_type_definitions:
+            self.note_type_definitions[note_type] = []
+
+        # Create definition object
+        new_note_def = models.NoteTypeDefinition(
+            note_type=note_type,
+            extends=extends,
+            metadata_fields=metadata_fields,
+            additional_metadata=additional_metadata,
+            body_specification=body_specification,
+        )
+
+        self.note_type_definitions[note_type].append(new_note_def)
 
     def add_fcollection_def(self, definition: dict) -> None:
         """Validates and adds a collection definition to the list.
