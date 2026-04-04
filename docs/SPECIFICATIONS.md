@@ -696,7 +696,7 @@ Needs to be added.
 ### Collection Type Definition
 
 As with `minimal_note`, there is a default inheritance collection that is not
-expected to be used by the user, and we call it `empty_collection`. This is its
+expected to be used by the user, and we call it `minimal_collection`. This is its
 definition:
 
 ```yaml
