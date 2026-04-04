@@ -689,7 +689,9 @@ new_note_type:
     - notes
 ```
 
-The definition for ``
+The definition for `basic_structure`
+
+Needs to be added.
 
 ### Collection Type Definition
 
@@ -698,8 +700,8 @@ expected to be used by the user, and we call it `empty_collection`. This is its
 definition:
 
 ```yaml
-new_note_type:
-  note_type: minimal_note
+new_collection_type:
+  collection_type: minimal_note
   metadata_fields:
     - uuid
     - time_created
