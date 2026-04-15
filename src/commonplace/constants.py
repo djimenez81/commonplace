@@ -19,6 +19,7 @@ FIELD_NAME = "field_name"
 FIELD_TYPE = "field_type"
 
 NOTE_TYPE = "note_type"
+COLLECTION_TYPE = "collection_type"
 
 REQUIRED = "required"
 ASSIGNED = "assigned"
@@ -30,5 +31,7 @@ EXTENDS = "extends"
 META_FIELDS = "metadata_fields"
 ADD_META = "additional_metadata"
 BODY_SPEC = "body_specification"
+SUBCOL_INCLUDED = "subcollections_included"
+NOTE_TYPES_ALLOWED = "note_types_allowed"
 
 NIL_UUID = "00000000-0000-0000-0000-000000000000"
