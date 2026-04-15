@@ -29,7 +29,10 @@ class TypeConfigurationManager:
 
     field_type_definitions: dict[str, list[models.FieldTypeDefinition]]
     note_type_definitions: dict[str, list[models.NoteTypeDefinition]]
-    collection_type_definitions: dict[str, list[models.CollectionTypeDefinition]]
+    collection_type_definitions: dict[
+        str,
+        list[models.CollectionTypeDefinition]
+    ]
 
     def __init__(self):
         """Initializes the Type Configuration Manager.
@@ -46,7 +49,7 @@ class TypeConfigurationManager:
         for definition in definitions:
 
             if not isinstance(definition, dict):
-                raise TypeError(f"Definition has to be passed as a dictionary")
+                raise TypeError("Definition has to be passed as a dictionary")
 
             if len(definition) != 1:
                 raise ValueError("Malformed definition.")
@@ -123,7 +126,7 @@ class TypeConfigurationManager:
         # Optional fields
         extends = definition.get(constants.EXTENDS)
         metadata_fields = definition.get(constants.META_FIELDS)
-        additional_metadata = definition.get(constants.META_FIELDS)
+        additional_metadata = definition.get(constants.ADD_META)
         body_specification = definition.get(constants.BODY_SPEC)
 
         # Ensure container exists
@@ -139,13 +142,47 @@ class TypeConfigurationManager:
             body_specification=body_specification,
         )
 
+        # Include the new object
         self.note_type_definitions[note_type].append(new_note_def)
 
-    def add_fcollection_def(self, definition: dict) -> None:
+    def add_collection_def(self, definition: dict) -> None:
         """Validates and adds a collection definition to the list.
-        """
-        pass
 
+        Args:
+            definition: Dictionary containing field definition data.
+
+        Raises:
+            KeyError: If required keys are missing.
+        """
+        try:
+            collection_type = definition.get(constants.COLLECTION_TYPE)
+        except KeyError as exc:
+            raise KeyError(f"Missing required key: {exc.args[0]}") from exc
+
+        # Optional fields
+        extends = definition.get(constants.EXTENDS)
+        metadata_fields = definition.get(constants.META_FIELDS)
+        additional_metadata = definition.get(constants.ADD_META)
+        subcollections_included = definition.get(constants.SUBCOL_INCLUDED)
+        note_types_allowed = definition.get(constants.NOTE_TYPES_ALLOWED)
+
+
+        # Ensure container exists
+        if collection_type not in self.collection_type_definitions:
+            self.collection_type_definitions[collection_type] = []
+
+        # Create definition object
+        new_collection_def = models.CollectionTypeDefinition(
+            collection_type=collection_type,
+            extends=extends,
+            metadata_fields=metadata_fields,
+            additional_metadata=additional_metadata,
+            subcollections_included=subcollections_included,
+            note_types_allowed=note_types_allowed,
+        )
+
+        # Include the new object
+        self.collection_type_definitions[collection_type] = new_collection_def
 
 
 """
